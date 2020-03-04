@@ -1,0 +1,88 @@
+	11/12
+수정 		: 로그인시 비밀번호 오류시, 에러떠서, MemberController 수정 함 
+
+	11/11
+수정		: 레시피 등록이 안됬었는데 
+		  header.jsp 문제 였음 
+문제점	: 등록은 되는데 이미지가 eclipace에 저장 안됨
+추가		: 나의 레시피 삭제, 관심레시피 삭제 완료
+
+	11/11
+수정		: 회원 , mypage 완료
+start 	: 상세뷰, 댓글, 관심레시피, 나의 레시피
+흔적		: 윤동 수정 코드 
+		  MemberDAO 의 loginCheck() 메서드 69번째줄
+			관심레시피,  나의 레시피에서   nickname을 사용하는데 null 값으로 처리 되서, 
+			로그인시 , nickname도 session에 넣기 위한 작업
+		  MemberService       수정됨  return 값 MemberVO
+		  MemberServiceImpl   수정됨  return 값 MemberVO
+		  MemberController    수정됨  받는 테이터 형 MemberVO
+OK		: 관심레시피, 나의 레시피 까지 됨 
+
+	11/9
+수정
+-. 먹지들의 레시피 검색 -> 재구성함 완료
+-. Join Login Logout 완료
+-. DB에서 TodayeatMember 테이블에서 
+	member_profile varchar2(50) default 'pro_male.jpg' not null
+	이부분 수정 와료
+-. Mypage 확인 들어가기
+
+	11/8
+합친것	: 유정 + tip + season + search + recipebook + meokjirecipe
+수정		: searchcontroller  추가 검색시 중복제거 안되서 == 를 .equals()로 변경   수정 완료
+start 	: 먹지들의 검색화면
+ok		: 먹지들의 검색화면
+	11/08
+수정		: checked + scroll 풀때 이벤트 처리 추가 완료
+수정		: service 없어서 만들었는데 bean생성에 문제사 생겨서 고생 , @이노테이션 설정 문제  controller에서 @SearchDAO를 해줘야지
+		  controller가 만들어 준걸 사용하면 null에러 뜸 수정 완료
+
+	11/07
+수정		: search recipe view 부분 레이아웃 수정 , 사용하는 재료가 많아지면 td가 추가 되서 cospan="" 를 수정
+서정 		: 로직 정리에서 구욱적 체크 유지 수정 완료
+
+	11/06-4
+수정		: 패키지 이름 변경 com.mycom.todayeat -> com.todayeat.search
+
+	11/06-3
+수정		: 검색된 레시피 이미지 클릭시 , search.jsp로 가서 </form>위치 이동 수정 완료
+수정		: nick_name -> nickname  (DB,VO,DAO의SQL문) 완료
+수정		: 검색 Material에서도 하기 완료
+수정		: controller & DAO 로직 정리  test.do 와 getRecipeVO()로 
+			전 test.do research.do   			후  test.do
+			전 getReSearch() getRecipeSearch() 	후 getRecipeVO() 
+			  getRecipeMaterial()				  getRecipeMaterial()
+	11/06-2
+수정		: 검색된 레시피 없으면 검색화면에 recipe 로고 안보이게 완료
+수정		: header 검객 가능 단어저한 완료
+수정		: 검색없이 '레시피BOOK'페이지로 가면 검색창 띠우기 완료
+start 	: 먹지들의레시피 & 레시피 BOOK & 로직 수정(검색을 material에서 하기)
+
+	11/06-1
+OK		: checkbox checked
+수정		: header 검색 수정 완료
+start 	: 먹지들의 페시피 시작  & 잘 돌아가는데 로직 다듬기가 필요함!
+
+	11/05
+수정		: research시 검색어 중복체크 안되서 수정함
+start 	: checkbox checked
+
+	11/04
+OK		: 체크 박스 이벤트 처리
+OK		: 재 검색 후 하단 View 잘 나옴
+start 	: checkbox checked
+
+	11/03
+OK		: 체크 박스 이벤트 처리
+OK		: 재 검색 후 하단 View 잘 나옴
+START	: 국가 체크 밖스 체크 사항 유지
+
+	11/02
+END		: 하단 Riew 내용 DB로 부터 출력
+END		: 검색어 highlight
+START	: 체크 박스 이벤트 처리
+
+	11/01
+OK		: 검색된 단어로 레시피 검색 및 화면 하단에 출력 가능 
+START	: 하단에 레시피 내용 DB로 부터 출력 + 검색단어 마크 처리
